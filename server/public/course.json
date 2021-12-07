@@ -1,0 +1,14 @@
+{
+    "name": "JavaScript-разработчик",
+    "months": 3,
+    "price": 123123123,
+    "school":{
+        "name": "Nordic IT School",
+        "address": "Москва, Большая Спасская, 12",
+        "site": "https://inordic.ru"
+    },
+    "teacher":{
+        "name": "Вячеслав Жуков",
+        "skill": "react"
+    }
+}

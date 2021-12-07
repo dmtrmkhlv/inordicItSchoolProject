@@ -1,0 +1,20 @@
+.Comment {
+    margin: 15px 0;
+    h3 {
+        margin: 15px 0 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    div.filter {
+        display: inline-block;
+        &:first-child {
+            margin-right: 10px;
+        }
+        &.asc {
+            color: green;
+        }
+        &.desc {
+            color: red;
+        }
+    }
+}
