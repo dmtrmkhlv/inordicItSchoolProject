@@ -8,15 +8,14 @@
     "build": "webpack -p",
     "start": "webpack-dev-server -d --content-base ./public",
     "server-dev": "nodemon --exec babel-node --inspect ./server",
+    "server-dev2": "nodemon --exec ./server",
     "server-prod": "node ./server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
@@ -28,7 +27,7 @@
     "history": "^4.10.1",
     "moment": "^2.25.3",
     "mongodb": "^3.5.7",
-    "node-sass": "^4.14.1",
+    "nanoid": "^3.2.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -52,7 +51,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/node": "^7.8.7",
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "extract-text-webpack-plugin": "^3.0.2"
   }
 }

@@ -49,5 +49,18 @@ export default {
         borderColor: '#fffff',
         borderRadius: '4px',
         fontSize: '1.2rem'
+    }, 
+    buttonInactive:{
+        width: '50%',
+        textAlign: 'center',
+        padding: '10px 0px',
+        boxSizing: 'border-box'
+    },
+    buttonActive:{
+        width: '50%',
+        textAlign: 'center',
+        background: '#f1f1f1',
+        padding: '10px 0px',
+        boxSizing: 'border-box'
     }
 };

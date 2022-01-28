@@ -6,6 +6,7 @@ import Codes from '../model/Codes';
 
 const router = Router();
 
+
 router.use('/api', api);
 
 router.post('/auth', async (req, res) => {
@@ -65,8 +66,10 @@ router.post('/newpass', async (req, res) => {
 
 router.use('/', express.static(__dirname + '/public'));
 
+
 router.use('*', ( req, res) => {
-    res.sendFile('/public/index.html');
+    // console.log(req)
+    // res.sendFile('/public/index.html');
 });
 
 export default router;

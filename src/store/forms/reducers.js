@@ -3,6 +3,9 @@ const initalState = [];
 const formReducer = (state = initalState, action) => {
     switch(action.type){
         case 'NEW_FORM':
+            if([...state].find((form)=> form.id === action.form.id)){
+                return state;
+            }
             return [...state, action.form];
         case 'EDIT_FORM': 
             const newForms = [...state];

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import EditForm from './EditForm';
 import { connect } from 'react-redux'
 import {deleteForm} from '../store/forms/actions';
+import { nanoid } from 'nanoid';
 
 const SubListFormsItem = props=>{
 
@@ -95,21 +96,26 @@ const SubListFormsItem = props=>{
             right: '0',
             width: '170px'
         },
-        blockButton: {
+        blockButton:{
             display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            margin: '0 5px'
+            flexDirection: 'column',
+            alignItems: 'end',
+            marginTop: '18px',
+            width: '30%',
+        },
+        button:{
+            width: '120px'
         }
     }
     !showRepost ? slfiStyle.repostBG.display = "none" : slfiStyle.repostBG.display = "flex";
     !showCopyLink ? slfiStyle.link.display = "none" : slfiStyle.link.display = "block";
 
     return(
-        <div className="lists-item-box-form" style={slfiStyle.formBox} >
+        <div
+        key={nanoid()}
+         className="lists-item-box-form" style={slfiStyle.formBox} >
             {
-                !isEdit
-                    ? <div className="lists-item-box-form-name" style={{width: '65%', margin: '28px 5px 10px 5px'}}>{props.name}</div>
+                !isEdit ? <div className="lists-item-box-form-name" style={{width: '65%', margin: '28px 5px 10px 5px'}}>Опрос: {props.name}</div>
                     :   
                     <>
                         <EditForm 
@@ -132,13 +138,11 @@ const SubListFormsItem = props=>{
                 </div>
             </div>
  
-            <div className="lists-item-box-buttons" style={{display: 'flex', alignItems: 'start', justifyContent: 'flex-end', marginTop: '18px', width: '30%'}}>
-                { !isEdit ?  <button onClick={handleClickName}>Открыть</button> :  <button onClick={handleClickName}>Закрыть</button>} 
-                <div style={slfiStyle.blockButton}>
-                    <button onClick={handleRepost} style={{width: '120px'}}>Поделиться</button>
-                    <button onClick={e => handleGetAnswers(props.id)} style={{width: '120px'}}>Ответы</button>
-                </div>
-                <button className="button-delete" onClick={e => props.handleDeleteForm(props.id)}>Удалить</button>
+            <div style={slfiStyle.blockButton}>
+                { !isEdit ?  <button onClick={handleClickName} style={slfiStyle.button}>Редактировать</button> :  <button onClick={handleClickName} style={slfiStyle.button}>Закрыть</button>} 
+                <button onClick={handleRepost} style={slfiStyle.button}>Поделиться</button>
+                <button onClick={e => handleGetAnswers(props.id)} style={slfiStyle.button}>Ответы</button>
+                <button className="button-delete" style={slfiStyle.button} onClick={e => props.handleDeleteForm(props.id)}>Удалить</button>
             </div>
         </div>
     )
